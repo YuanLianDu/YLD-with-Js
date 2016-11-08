@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高阶函数</title>
+    <script type="text/javascript">
+        function pow(x,y,z) {
+        console.log('x:', x);
+        console.log('y:', y);
+        console.log('z:', z);
+//         return x + y;
+         return x;
+        }
+
+        var arr = [1, 0, 1, 0, 1, 0, 1, 0, 1];
+        console.log(arr.map(pow));
+
+        function add(y) {
+            return y;
+        }
+        for(i=0;i<10;i++){
+            console.log('auto_increment:' + add());
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>
