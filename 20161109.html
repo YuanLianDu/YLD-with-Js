@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ol id="test-list">
+    <li class="lang">Scheme</li>
+    <li class="lang">JavaScript</li>
+    <li class="lang">Python</li>
+    <li class="lang">Ruby</li>
+    <li class="lang">Haskell</li>
+</ol>
+
+
+<ul id="test-ul">
+    <li>JavaScript</li>
+    <li>Swift</li>
+    <li>HTML</li>
+    <li>ANSI</li>
+    <li>CSS</li>
+    <li>DirectX</li>
+</ul>
+
+</body>
+<script>
+    /*var arr = [],result = [];
+    var list = document.getElementById('test-list');
+
+    for(var i of list.children) {
+        arr.push(i.innerText);
+    }
+    arr.sort();
+
+   for(var k=0; k<arr.length;k++) {
+        list.children[k].innerText = arr[k];
+    }*/
+
+    /*var tmp = [], ol = document.getElementById('test-list');
+    for (var i of ol.children) {tmp.push(i);}
+    console.log(tmp);
+    tmp.sort((x, y) => {return x.innerText > y.innerText;});
+    for (var j of tmp) {
+        ol.appendChild(j)
+    };*/
+
+    var parent = document.getElementById('test-ul');
+    for(var i of parent.children) {
+        if(i.innerText == 'Swift' || i.innerText == 'ANST' || i.innerText == 'DirectX') {
+            parent.removeChild(i);
+        }
+    }
+    console.log(parent);
+
+</script>
+</html>
