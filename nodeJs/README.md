@@ -21,4 +21,6 @@
 ## Practice Results
 
 + [NodeJs入门实践成果](https://github.com/YuanLianDu/YLD-with-Js/tree/master/nodeJs/upload)
-+ [七天学会NodeJs-lessonOne实践成果]()
++ [七天学会NodeJs-lessonOne实践成果](https://github.com/YuanLianDu/YLD-with-Js/tree/master/nodeJs/lessonOne)
+
+## 读书笔记与总结
