@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping list</title>
+</head>
+<style type="text/css">
+    #purchases {
+        border: 1px solid black;
+        color: saddlebrown;
+        padding: 1em;
+    }
+    #purchases li{
+        font-weight: bold;
+    }
+</style>
+<body>
+<h1>What to buy?</h1>
+<p title="a gentle remind"> Don't forget</p>
+<ul id="purchases">
+    <li>milk</li>
+    <li class="sale">orange</li>
+    <li class="sale">apple</li>
+</ul>
+
+<table id="outside">
+    <tr><td id="t1">one</td></tr>
+    <tr><td id="t2">two</td></tr>
+</table>
+
+<button id="my_button_one">click button one</button>
+<button id="my_button_two" onclick="alert('hello world,button two')">click button two</button>
+<button id="my_button_three" >click button three</button>
+<button id="my_button_four" >click button four</button>
+<script>
+
+
+    var myButtonOne = document.getElementById('my_button_one');
+    myButtonOne.addEventListener('click',function () {
+        alert('Hello world,button one');
+    });
+
+    var myButtonThree = document.getElementById('my_button_three');
+    myButtonThree.onclick = function (event) {
+        alert('Hello world,button three');
+    }
+
+    var myButtonFour = document.getElementById('my_button_four');
+    function foo(evt) {
+        alert(evt);
+    }
+    myButtonFour.onclick = foo;
+
+
+
+    function modifyText(new_text) {
+        var t2 = document.getElementById("t2");
+        t2.firstChild.nodeValue = new_text;
+    }
+
+    // Function to add event listener to table
+    var el = document.getElementById("outside");
+    el.addEventListener("click", function(){modifyText("four")}, false);
+
+    /*function  modifyText() {
+        var t2 = document.getElementById('t2');
+        if(t2.firstChild.nodeValue == "three") {
+            t2.firstChild.nodeValue = "two";
+        }else {
+            t2.firstChild.nodeValue = 'three';
+        }
+    }
+
+    var e1 = document.getElementById("outside");
+    e1.addEventListener('click',modifyText,false);*/
+
+
+    /*var para = document.getElementsByTagName('p');
+    for(var i = 0; i < para.length;i++) {
+        alert(para[i].getAttribute('title'));
+    }*/
+    /*var items = document.getElementsByTagName('li');
+    for(var i=0;i<items.length;i++){
+        alert(typeof items[i]);
+    }*/
+//    alert(document.getElementById('purchases'));
+</script>
+</body>
+</html>

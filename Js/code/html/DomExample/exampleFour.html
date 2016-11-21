@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User StyleSheets</title>
+</head>
+<style type="text/css">
+    BODY { background-color: darkblue; }
+    P { font-face: Arial; font-size: 10pt; margin-left: .125in; }
+    #lumpy { display: none; }
+</style>
+<script type="text/javascript">
+    ss = document.styleSheets;
+    for(var i=0;i<ss.length;i++) {
+        for (var j=0;j<ss[i].cssRules.length;j++) {
+            console.log(ss[i].cssRules[j].selectorText + "\n");
+        }
+    }
+</script>
+<body>
+<p> ddddd</p>
+<div id="lumpy"> divdiv</div>
+</body>
+</html>

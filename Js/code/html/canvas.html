@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .kumamon {
+        border: 1px solid #000;
+    }
+</style>
+<body>
+
+<canvas class="kumamon" id="kumamon" width="500" height="500">kumamon</canvas>
+</body>
+<script>
+    function drawKumamon() {
+        var ku = document.getElementById('kumamon');
+        if (ku.getContext) {
+            var ctx = ku.getContext("2d");
+            var v_color = "rgb(174,0,0)";
+            paintBackground(ctx,v_color);
+        }
+    }
+
+    window.onload = function () {
+        drawKumamon();
+
+    }
+
+    var EventUntil = {
+        addHandler: function (ele, type, handler) {
+            if (ele.addEventListener) {
+                ele.addEventListener(type, handler, false);
+            } else if (ele.attachEvent) {
+                ele.attachEvent("on" + type, handler);
+            } else {
+                ele["on" + type] = handler;
+            }
+
+        },
+
+        removeHandler: function (ele, type, handler) {
+            if (ele.removeEventListener) {
+                ele.removeEventListener(type, handler, false);
+            } else if (ele.detachEvent) {
+                ele.detachEvent("on" + type, handler);
+            } else {
+                ele["on" + type] = null;
+            }
+        }
+    };
+
+    function paintBackground(ctx,sColor) {
+        v_color = sColor;
+        ctx.fillStyle = sColor;
+        ctx.fillRect(0,0,500,500);
+    }
+</script>
+</html>

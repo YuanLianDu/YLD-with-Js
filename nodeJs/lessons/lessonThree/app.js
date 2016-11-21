@@ -10,16 +10,12 @@ app.get('/',function (req,res,next) {
 
         if(err) { next(err);}
 
-        /*console.log(superRes.type);
-        console.log(superRes.body);
-        console.log(superRes.header);
-        console.log(superRes.text);*/
+
         var $ = cheerio.load(superRes.text);
         var items = [];
 
         $('#topic_list .topic_title').each(function (index,element) {
             var $element = $(element);
-            // console.log($element);
             items.push({
                 title: $element.attr('title'),
                 href: $element.attr('href'),

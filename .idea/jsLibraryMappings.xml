@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$/nodeJs/lessonOne" libraries="{YLD-with-Js/nodeJs/lessonOne/node_modules}" />
-    <file url="file://$PROJECT_DIR$/nodeJs/lessonThree" libraries="{YLD-with-Js/nodeJs/lessonThree/node_modules}" />
-    <file url="file://$PROJECT_DIR$/nodeJs/lessonTwo" libraries="{YLD-with-Js/nodeJs/lessonTwo/node_modules}" />
-    <file url="file://$PROJECT_DIR$/nodeJs/node-echo" libraries="{YLD-with-Js/nodeJs/node-echo/node_modules}" />
-    <file url="file://$PROJECT_DIR$/nodeJs/upload" libraries="{YLD-with-Js/nodeJs/upload/node_modules}" />
+    <file url="file://$PROJECT_DIR$/nodeJs" libraries="{YLD-with-Js/nodeJs/node_modules}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>

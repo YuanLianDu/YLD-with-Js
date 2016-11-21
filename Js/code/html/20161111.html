@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="test-register" action="#" target="_blank" onsubmit="return checkRegisterForm()">
+    <p id="test-error" style="color:red"></p>
+    <p>
+        用户名: <input type="text" id="username" name="username">
+    </p>
+    <p>
+        口令: <input type="password" id="password" name="password">
+    </p>
+    <p>
+        <input type="radio" name="sex" id="male" value="male">男
+        <input type="radio" name="sex" id="female" value="female">女
+    </p>
+    <p>
+        喜欢的车：
+        <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </p>
+    <p id="coffee">
+        喜欢的咖啡口味：
+        <input type="checkbox"  name="coffee" value="奶油">加奶油<br />
+        <input type="checkbox" name="coffee" value="糖块">加糖块<br />
+    </p>
+    <p>
+        重复口令: <input type="password" id="password-2">
+    </p>
+    <p>
+        <button type="submit">提交</button> <button type="reset">重置</button>
+    </p>
+
+
+</form>
+</body>
+
+<script>
+    'use strict';
+    var checkRegisterForm = function () {
+
+
+        //复选框
+        var coffee = document.getElementById('coffee');
+        if(coffee.attr("checked")) {
+            console.log();
+        }
+
+        // 下拉框
+        var cars = document.getElementById('cars');
+        console.log(cars.value);
+
+
+        //单选框
+        var male = document.getElementById('male');
+        var female = document.getElementById('female');
+
+        if(male.checked) { console.log(male.value);}
+        if(female.checked) { console.log(female.value);}
+
+        //注册 用户名、密码 文本框
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var password_2 = document.getElementById('password-2').value;
+        var error = document.getElementById('test-error');
+
+        var  reg = '^[A-Za-z0-9]+$';
+        if(!username.match(reg) && (username.length<3 || username.length>10)) {
+            console.log('用户名必须是3-10位英文字母或数字');
+            error.innerText = '用户名必须是3-10位英文字母或数字';
+            return false;
+        }
+
+        console.log(password.length);
+        if(password.length<6 || password.length>20) {
+            console.log('口令必须是6-20位');
+            error.innerText = '口令必须是6-20位';
+            return false;
+        }
+        if(password != password_2 ) {
+            console.log('两次输入口令必须一致');
+            error.innerText = '两次输入口令必须一致';
+            return false;
+        }
+        error.innerText = "";
+        return true;
+    }
+</script>
+</html>

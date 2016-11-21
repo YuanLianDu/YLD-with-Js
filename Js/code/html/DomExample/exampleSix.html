@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getComputedStyle example</title>
+
+    <script type="text/javascript">
+        function cStyles() {
+            var RefDiv = document.getElementById('d1');
+            var style = document.defaultView.getComputedStyle(RefDiv,null);
+
+            var textHeight = document.getElementById('t1');
+            textHeight.value = style.getPropertyValue('height');
+
+            var textWidth = document.getElementById('t2');
+            textWidth.value = style.getPropertyValue('width');
+
+            var textBackgroundColor = document.getElementById("t3");
+            textBackgroundColor.value = style.getPropertyValue("background-color");
+        }
+    </script>
+    <style type="text/css">
+        #d1 {
+            margin-left: 10px;
+            backgound-color:rgb(173, 216, 230);
+            height: 20px;
+            max-width: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="d1">&nbsp;</div>
+
+<form action="">
+    <p>
+        <button type="button" onclick="cStyles()">getComputedStyle</b>
+            height<input id="t1" type="text" value="1">
+            max-width<input id="t2" type="text" value="2">
+            bg-color<input id="t3" type="text" value="3">
+
+        </button>
+    </p>
+</form>
+</body>
+</html>
