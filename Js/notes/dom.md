@@ -4,13 +4,21 @@
 
 
 
-获取元素常用方法：
+常用API：
 
-+ getElementById()
-+ getElementsByTagName()
-+ getElementsByClassName()
-+ getAttribute()
-+ setAttribute()
++ document.getElementById(id)
++ element.getElementsByTagName(name)
++ document.createElement(name)
++ parentNode.appendChild(node)
++ element.innerHTML
++ element.style.left
++ element.setAttribute
++ element.getAttribute
++ element.addEventListener
++ window.content
++ window.onload
++ window.dump
++ window.scrollTo
 
 
 ## DOM 事件模型:
@@ -52,10 +60,18 @@
 ```
 
 
- ## Examples
+## 使用定位器定位DOM元素
+
+
++ element.querySelector
++ element.querySelectorAll
++ document.querySelector
++ document.querySelectorAll
+
+## Examples
  
  
- ###  Example One:  高度和宽度
+### Example One:  高度和宽度
  
  利用数循环展示了在不同尺寸的图片时使用其 height 和 width 属性的情况：
       

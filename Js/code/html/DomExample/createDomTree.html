@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建dom树</title>
+   <script type="text/javascript">
+
+       var people = {
+               "person": [{
+                   "address": [{
+                       "@street": "321 south st",
+                       "@city": "denver",
+                       "@state": "co",
+                       "@country": "usa"
+                   }, {
+                       "@street": "123 main st",
+                       "@city": "arlington",
+                       "@state": "ma",
+                       "@country": "usa"
+                   }],
+                   "@first-name": "eric",
+                   "@middle-initial": "H",
+                   "@last-name": "jung"
+               }, {
+                   "address": [{
+                       "@street": "321 north st",
+                       "@city": "atlanta",
+                       "@state": "ga",
+                       "@country": "usa"
+                   }, {
+                       "@street": "123 west st",
+                       "@city": "seattle",
+                       "@state": "wa",
+                       "@country": "usa"
+                   }, {
+                       "@street": "321 south avenue",
+                       "@city": "denver",
+                       "@state": "co",
+                       "@country": "usa"
+                   }],
+                   "@first-name": "jed",
+                   "@last-name": "brown"
+               }]
+       };
+
+       var doc = document.implementation.createDocument("", "", null);
+       var peopleElem = doc.createElement("people");
+
+       for(var person=0;person<people.person.length;person++) {
+           var personElem = doc.createElement("person");
+           console.log(people.person[person]);
+
+           for (var address=0;address<people.person[person].length;address++) {
+               var addressElem1 = doc.createElement("address");
+               for (var ele = 0;ele<people.person[person][address].length;ele++) {
+                   addressElem1.setAttribute(people.person[person][address].index,people.person[person][address][ele]);
+               }
+               personElem.appendChild(addressElem1);
+           }
+         peopleElem.appendChild(personElem);
+       }
+       doc.appendChild(peopleElem);
+   </script>
+</head>
+<body>
+
+</body>
+</html>
