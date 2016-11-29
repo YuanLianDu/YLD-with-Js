@@ -1,0 +1,10 @@
+{
+  "name": "node-echo",
+  "main": "./lib/echo.js",
+  "bin" : {
+    "node-echo": "./bin/node-echo"      //命令行程序名和主模块位置
+  },
+  "dependencies": {
+    "argv": "0.0.2"
+  }
+}
